@@ -143,15 +143,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.cmd('packadd! nohlsearch')
 
 require("config.lazy")
-
--- Force full transparency
-vim.cmd([[
-  hi Normal guibg=NONE ctermbg=NONE
-  hi NormalFloat guibg=NONE ctermbg=NONE
-  hi SignColumn guibg=NONE
-  hi LineNr guibg=NONE
-  hi EndOfBuffer guibg=NONE
-  hi WinSeparator guibg=NONE
-  hi NormalNC guibg=NONE ctermbg=NONE
-  hi NormalSB guibg=NONE ctermbg=NONE
-]])
