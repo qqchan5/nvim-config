@@ -26,7 +26,7 @@ return {
           else
             gitsigns.nav_hunk('next')
           end
-        end)
+        end, { desc = 'Jump to next git [c]hange' })
 
         map('n', '[c', function()
           if vim.wo.diff then
@@ -34,7 +34,7 @@ return {
           else
             gitsigns.nav_hunk('prev')
           end
-        end)
+        end, { desc = 'Jump to previous git [c]hange' })
 
         -- Actions
         -- visual mode
@@ -68,9 +68,7 @@ return {
         -- Toggles
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
         map('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = '[T]oggle git show [D]eleted' })
-
-        -- map('n', '<leader>hi', gitsigns.preview_hunk_inline)
-        map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = '[T]oggle git word [d]iff' })
+        map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = '[T]oggle git [w]ord diff' })
 
         -- Text object
         map({'o', 'x'}, 'ih', gitsigns.select_hunk)
