@@ -38,6 +38,9 @@ vim.o.showmode = false
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Indent with spaces instead of tabs
+vim.o.expandtab = true
+
 -- Save undo history
 vim.o.undofile = true
 
@@ -108,9 +111,12 @@ vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
 -- Keybinds for managing tabs
 --
 -- See `:help tabpage` for more info
-vim.keymap.set('n', '<C-t><C-t>', ':tabnew<CR>', { silent = true, desc = 'Open new tab' })
-vim.keymap.set('n', '<C-t><C-w>', ':tabclose<CR>', { silent = true, desc = 'Close current tab' })
-vim.keymap.set('n', '<C-t><C-o>', ':tabonly<CR>', { silent = true, desc = 'Close all but current tab' })
+vim.keymap.set('n', '<C-t><C-t>', ':tabnew<CR>',
+  { silent = true, desc = 'Open new tab' })
+vim.keymap.set('n', '<C-t><C-w>', ':tabclose<CR>',
+  { silent = true, desc = 'Close current tab' })
+vim.keymap.set('n', '<C-t><C-o>', ':tabonly<CR>',
+  { silent = true, desc = 'Close all but current tab' })
 
 -- [[ Basic Autocommands ]].
 -- See `:h lua-guide-autocommands`, `:h autocmd`, `:h nvim_create_autocmd()`
