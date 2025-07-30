@@ -125,6 +125,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Nvim comes bundled with a set of packages that are not enabled by
 -- default. You can enable any of them by using the `:packadd` command.
 
+vim.api.nvim_create_user_command('Copy', function(opts)
+  if opts.range == 0 then
+    vim.cmd "silent! .w !wl-copy"
+  else
+    vim.cmd(string.format("silent! %d,%d w !wl-copy", opts.line1, opts.line2))
+  end
+end, { range = true, desc = "Copy text" })
+
 -- For example, to add the "nohlsearch" package to automatically turn off search highlighting after
 -- 'updatetime' and when going to insert mode
 -- vim.cmd('packadd! nohlsearch')
