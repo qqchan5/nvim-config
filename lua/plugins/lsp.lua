@@ -49,6 +49,10 @@ return {
         map("n", "<leader>d", function()
           vim.diagnostic.open_float(nil, { focus = false })
         end, "Show Diagnostics at Cursor")
+        map("n", "<leader>w", function()
+          local new_state = not vim.diagnostic.config().virtual_lines
+          vim.diagnostic.config({virtual_lines = new_state})
+        end, "Toggle Diagnostics")
       end
 
       -- LSP servers and config overrides
@@ -92,9 +96,6 @@ return {
           format = function(diagnostic)
             local diagnostic_message = {
               [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
             }
             return diagnostic_message[diagnostic.severity]
           end,
