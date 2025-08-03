@@ -7,8 +7,6 @@ return {
 
   --  LSP
   -- { 'neovim/nvim-lspconfig', enabled = false },
-  -- { "mason-org/mason-lspconfig.nvim", enabled = false },
-  -- { "mason-org/mason.nvim", enabled = false },
   -- { "hrsh7th/nvim-cmp", enabled = false },
   -- { "folke/lazydev.nvim", enabled = false },
 }

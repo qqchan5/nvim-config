@@ -1,6 +1,7 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
--- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be
+-- used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -10,14 +11,14 @@ vim.g.have_nerd_font = true
 -- [[ Setting options ]] See `:h vim.o`
 -- NOTE: You can change these options as you wish!
 -- For more options, you can see `:help option-list`
--- To see documentation for an option, you can use `:h 'optionname'`, for example `:h 'number'`
--- (Note the single quotes)
+-- To see documentation for an option, you can use `:h 'optionname'`,
+-- for example `:h 'number'` (Note the single quotes)
 
 -- Print the line number in front of each line
 vim.o.number = true
 
--- Use relative line numbers, so that it is easier to jump with j, k. This will affect the 'number'
--- option above, see `:h number_relativenumber`
+-- Use relative line numbers, so that it is easier to jump with j, k. This will
+-- affect the 'number' option above, see `:h number_relativenumber`
 vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -59,8 +60,9 @@ vim.o.scrolloff = 10
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
--- instead raise a dialog asking if you wish to save the current file(s) See `:help 'confirm'`
+-- if performing an operation that would fail due to unsaved changes in the
+-- buffer (like `:q`), instead raise a dialog asking if you wish to save the
+-- current file(s) See `:help 'confirm'`
 vim.o.confirm = true
 
 -- [[ Set up keymaps ]] See `:h vim.keymap.set()`, `:h mapping`, `:h keycodes`
@@ -97,10 +99,10 @@ vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h')
 vim.keymap.set({ 't', 'i' }, '<A-j>', '<C-\\><C-n><C-w>j')
 vim.keymap.set({ 't', 'i' }, '<A-k>', '<C-\\><C-n><C-w>k')
 vim.keymap.set({ 't', 'i' }, '<A-l>', '<C-\\><C-n><C-w>l')
-vim.keymap.set({ 'n' }, '<A-h>', '<C-w>h')
-vim.keymap.set({ 'n' }, '<A-j>', '<C-w>j')
-vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k')
-vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
+vim.keymap.set('n', '<A-h>', '<C-w>h')
+vim.keymap.set('n', '<A-j>', '<C-w>j')
+vim.keymap.set('n', '<A-k>', '<C-w>k')
+vim.keymap.set('n', '<A-l>', '<C-w>l')
 
 -- Keybinds for managing tabs
 --
@@ -114,7 +116,6 @@ vim.keymap.set('n', '<C-t><C-o>', ':tabonly<CR>',
 
 -- [[ Basic Autocommands ]].
 -- See `:h lua-guide-autocommands`, `:h autocmd`, `:h nvim_create_autocmd()`
--- See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text.
 -- Try it with `yap` in normal mode. See `:h vim.hl.on_yank()`
@@ -128,10 +129,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- [[ Create user commands ]]
 -- See `:h nvim_create_user_command()` and `:h user-commands`
 
--- [[ Add optional packages ]]
--- Nvim comes bundled with a set of packages that are not enabled by
--- default. You can enable any of them by using the `:packadd` command.
-
 vim.api.nvim_create_user_command('Copy', function(opts)
   if opts.range == 0 then
     vim.cmd "silent! .w !wl-copy"
@@ -140,8 +137,13 @@ vim.api.nvim_create_user_command('Copy', function(opts)
   end
 end, { range = true, desc = "Copy text" })
 
--- For example, to add the "nohlsearch" package to automatically turn off search highlighting after
--- 'updatetime' and when going to insert mode
+-- [[ Add optional packages ]]
+-- Nvim comes bundled with a set of packages that are not enabled by
+-- default. You can enable any of them by using the `:packadd` command.
+
+-- For example, to add the "nohlsearch" package to automatically turn off
+-- search highlighting after 'updatetime' and when going to insert mode
 -- vim.cmd('packadd! nohlsearch')
 
+-- [[ Load plugin manager ]]
 require("config.lazy")
