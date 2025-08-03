@@ -10,6 +10,10 @@ return {
         changedelete = { text = '~' },
       },
       attach_to_untracked = true,
+      -- Add rounded borders to `gitsigns` floating windows
+      preview_config = {
+        border = "rounded",
+      },
       on_attach = function(bufnr)
         local gitsigns = require('gitsigns')
 
@@ -57,8 +61,7 @@ return {
         end, { desc = 'git [b]lame line' })
         map('n', '<leader>hd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
         map('n', '<leader>hD', function()
-          -- gitsigns.diffthis '@'
-          gitsigns.diffthis '~'
+          gitsigns.diffthis '@'
         end, { desc = 'git [D]iff against last commit' })
 
         -- Quickfix
