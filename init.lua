@@ -46,6 +46,9 @@ vim.o.splitbelow = true
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
 
+-- Highlight column 80 to encourage good line length
+vim.o.colorcolumn = "80"
+
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
 
