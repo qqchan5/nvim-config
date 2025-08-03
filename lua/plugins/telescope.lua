@@ -20,9 +20,10 @@ return {
         },
       },
     }
-    pcall(require('telescope').load_extionsion, 'fsf')
-    pcall(require('telescope').load_extionsion, 'ui-select')
 
+    -- Load extensions if available
+    pcall(require('telescope').load_extension, 'fzf')
+    pcall(require('telescope').load_extension, 'ui-select')
     local builtin = require 'telescope.builtin'
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, 
       { desc = '[F]ind [H]elp' })
