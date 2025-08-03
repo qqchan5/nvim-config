@@ -85,6 +85,10 @@ vim.keymap.set('n', '<leader>tt', function()
   end
 end, { desc = '[T]oggle [t]ab width' })
 
+-- Keymap to show diagnostic quickfix
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist,
+  { desc = 'Open diagnostic [Q]uickfix list' })
+
 -- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
 vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h')
 vim.keymap.set({ 't', 'i' }, '<A-j>', '<C-\\><C-n><C-w>j')
