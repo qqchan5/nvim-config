@@ -33,6 +33,11 @@ vim.o.breakindent = true
 -- Indent with spaces instead of tabs
 vim.o.expandtab = true
 
+-- Default to a tab width of spaces spaces
+vim.bo.tabstop = 4
+vim.bo.shiftwidth = 4
+vim.bo.softtabstop = 4
+
 -- Save undo history
 vim.o.undofile = true
 
