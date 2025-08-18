@@ -49,6 +49,21 @@ return {
           vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
         end
         map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
+        -- Telescope "preferable" once there is a new release which does not
+        -- rely on deprecated vim.lsp.util.jump_to_location (alt. use master)
+        -- map("n", "gd", require("telescope.builtin").lsp_definitions,
+        --   "Go to Definition")
+        map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration")
+        -- map("n", "gr", require("telescope.builtin").lsp_references,
+        --   "Go to References")
+        -- map("n", "gi", require("telescope.builtin").lsp_implementations,
+        --   "Go to Implementations")
+        -- map("n", "gO", require("telescope.builtin").lsp_document_symbols,
+        --   "Open Document Symbols")
+        -- map("n", "gW", require("telescope.builtin").lsp_dynamic_workspace_symbols,
+        --   "Open Workspace Symbols")
+        -- map("n", "grt", require("telescope.builtin").lsp_type_definitions,
+        --   "Go to Type Definition")
         map("n", "K", function()
           vim.lsp.buf.hover({ border = _border })
         end, "Hover")
