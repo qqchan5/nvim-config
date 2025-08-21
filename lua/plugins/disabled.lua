@@ -6,6 +6,7 @@ return {
   -- { 'nvim-telescope/telescope.nvim', enabled = false },
   -- { 'folke/todo-comments.nvim', enabled = false },
   -- { 'echasnovski/mini.nvim', enabled = false },
+  -- { 'windwp/nvim-autopairs', enabled = false },
 
   --  LSP
   -- { 'neovim/nvim-lspconfig', enabled = false },
