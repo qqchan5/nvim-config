@@ -4,7 +4,8 @@ return {
   -- { "folke/tokyonight.nvim", enabled = false },
   -- { "lewis6991/gitsigns.nvim", enabled = false },
   -- { 'nvim-telescope/telescope.nvim', enabled = false },
-  -- {'folke/todo-comments.nvim', enabled = false },
+  -- { 'folke/todo-comments.nvim', enabled = false },
+  -- { 'echasnovski/mini.nvim', enabled = false },
 
   --  LSP
   -- { 'neovim/nvim-lspconfig', enabled = false },
