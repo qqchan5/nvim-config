@@ -16,7 +16,18 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       -- LSP installer
-      { "mason-org/mason.nvim", opts = {} },
+      {
+        "mason-org/mason.nvim",
+        opts = {
+          ui = {
+            icons = {
+              package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗"
+            },
+          },
+        },
+      },
       -- Bridges Mason with lspconfig
       "mason-org/mason-lspconfig.nvim",
       -- Adds LSP completion capabilities
